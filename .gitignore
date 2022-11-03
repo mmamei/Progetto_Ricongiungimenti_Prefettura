@@ -5,3 +5,4 @@ venv/
 config_flask.py
 config.py
 instance/
+static/

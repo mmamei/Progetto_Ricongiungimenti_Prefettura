@@ -13,6 +13,7 @@ app = Flask(__name__)
 app.config.from_pyfile('config_flask.py')
 mail = Mail(app)
 db = SQLAlchemy(app)
+app.view_functions['static'] = login_required(app.send_static_file)
 
 # Define models
 roles_users = db.Table('roles_users',
@@ -131,7 +132,32 @@ def migranti():
     return render_template('migranti.html', migranti=migranti)
 
 
+@app.route('/addfile',methods=['GET','POST'])
+@login_required
+def addfile():
+    if current_user.ente == 'prefettura':
+        if request.method == 'GET':
+            return render_template('addfile.html')
+        else:
+            nome = request.form['nome']
+            cognome = request.form['cognome']
+            file = request.files['file']
+            #print(file.filename)
+            save_file(nome,cognome,file)
+            flash('Operazione eseguita con successo')
+            return redirect('/')
+    else:
+        flash('Operazione non consentita')
+        return redirect('/')
 
+@app.route('/getfiles',methods=['POST'])
+@login_required
+def getfiles():
+    nome = request.form['nome']
+    cognome = request.form['cognome']
+    files = get_files(nome,cognome)
+    #print(files)
+    return render_template('files.html', nome=nome, cognome=cognome, files=files)
 
 if __name__ == '__main__':
     app.run()

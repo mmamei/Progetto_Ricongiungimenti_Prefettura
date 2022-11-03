@@ -11,6 +11,13 @@ if __name__ == '__main__':
     connection.commit()
     connection.close()
 
+    connection = sqlite3.connect(prefix + base_db)
+    cursor = connection.cursor()
+    cursor.execute(
+        "CREATE TABLE IF NOT EXISTS migranti_files (nome TEXT, cognome TEXT, file TEXT, PRIMARY KEY (nome, cognome,file))")
+    connection.commit()
+    connection.close()
+
     connection = sqlite3.connect(prefix+base_db)
     cursor = connection.cursor()
     with open('init_data.csv') as f:

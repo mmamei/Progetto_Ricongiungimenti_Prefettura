@@ -1,0 +1,22 @@
+{% extends "baseboot.html" %}
+
+{% block title %}
+Files
+{% endblock %}
+
+{% block app_content %}
+<div class="container-fluid">
+	<div class="row">
+		<table class="table table-bordered table-hover">
+			<tr>
+				<th>{{ nome }} {{cognome }}</th>
+			</tr>
+			{% for f in files %}
+				<tr>
+					<td><a href="static/{{nome}}_{{cognome}}/{{f[0]}}">{{f[0]}}</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

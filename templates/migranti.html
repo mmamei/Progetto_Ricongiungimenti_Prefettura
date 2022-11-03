@@ -14,6 +14,7 @@ Migranti
 				<th>Nome</th>
 				<th>Cognome</th>
 				<th>Stato</th>
+				<th>Files</th>
 			</tr>
 			</thead>
 			</tbody>
@@ -22,6 +23,15 @@ Migranti
 					<td>{{ mig[0] }}</td>
 					<td>{{ mig[1] }}</td>
                     <td>{{ mig[2] }}</td>
+					<td style="text-align: center">
+					<form method="post" action="getfiles">
+						<input style="display:none" name="nome" value="{{ mig[0] }}"/>
+						<input style="display:none" name="cognome" value="{{ mig[1] }}"/>
+						<button type="submit" class="btn btn-default btn-sm">
+							<i class="bi-plus-circle" style="font-size: 2rem;"></i>
+						</button>
+					</form>
+					</td>
 				</tr>
 			{% endfor %}
 			</tbody>
