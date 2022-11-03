@@ -1,0 +1,6 @@
+
+
+
+Restart supervisor:
+service supervisor restart
+

@@ -1,0 +1,54 @@
+{% extends "baseboot.html" %}
+
+{% block title %}
+Registrazione Nuovo Utente
+{% endblock %}
+
+{% block app_content %}
+<h2>Inserire i dati relativi al nuovo utente:</h2>
+<form method="post">
+
+
+	<div class="form-group row">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+    </div>
+  	</div>
+
+	<div class="form-group row">
+    <label for="password" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="password" name="password" placeholder="password" required>
+    </div>
+  	</div>
+
+
+    <div class="form-group row">
+    <label for="ente" class="col-sm-2 col-form-label">Ente</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="ente" name="ente" placeholder="ente" required>
+    </div>
+  	</div>
+
+
+	<div class="form-group row">
+    <label for="ruolo" class="col-sm-2 col-form-label">Ruolo</label>
+    <div class="col-sm-10">
+	<select name="ruolo" class="form-select" id="ruolo" required>
+		<option value="base">base</option>
+		<option value="base">super</option>
+	</select>
+    </div>
+  	</div>
+
+
+	<button type="submit" class="btn btn-primary">Inserisci</button>
+	<button type="reset" class="btn btn-dark">Cancella</button>
+
+
+{% endblock %}
+
+
+
+

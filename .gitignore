@@ -1,0 +1,7 @@
+dbcode/*.csv
+dbcode/*.txt
+venv/
+.idea/
+config_flask.py
+config.py
+instance/

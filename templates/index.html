@@ -1,0 +1,27 @@
+{% extends "baseboot.html" %}
+
+{% block title %}
+Ricongiungimenti
+{% endblock %}
+
+{% block app_content %}
+<div class="container-fluid">
+	<div class="row">
+		<h2>Riepilogo Presenze</h2>
+		<table class="table table-bordered table-hover">
+			<tr>
+				<th>Nome</th>
+				<th>Cognome</th>
+				<th>Stato</th>
+			</tr>
+			{% for mig in migranti %}
+				<tr>
+					<td>{{ mig[0] }}</td>
+					<td>{{ mig[1] }}</td>
+                    <td>{{ mig[2] }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "baseboot.html" %}
+
+{% block title %}
+Elimina Utente
+{% endblock %}
+
+{% block app_content %}
+<h2>Inserire i dati relativi all'utente:</h2>
+<form method="post">
+
+	<div class="form-group row">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+    </div>
+  	</div>
+
+
+	<button type="submit" class="btn btn-danger">Elimina</button>
+	<button type="reset" class="btn btn-dark">Cancella</button>
+
+
+{% endblock %}
+
+
+
+
