@@ -27,7 +27,6 @@ if __name__ == '__main__':
 
     connection.commit()
     connection.close()
-
     print('Finished')
 
 
