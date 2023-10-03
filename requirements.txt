@@ -1,6 +1,8 @@
-flask
+flask==2.2.2
 flask-security
-flask-sqlalchemy
+flask-sqlalchemy==3.0.2
 flask-mail
 email-validator
 bcrypt
+Werkzeug==2.2.2
+pytz
